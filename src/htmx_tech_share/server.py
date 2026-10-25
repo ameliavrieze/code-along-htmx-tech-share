@@ -22,7 +22,7 @@ def server_time():
     return f'<strong>Server time: {datetime.now():%H:%M:%S}</strong>'
 
 
-@app.route('/search', methods=["POST"])
+@app.route('/search', methods=["GET"])
 def search():
     slop = request.args.get("slop","").strip().lower()
     matches = [s for s in slop_list if slop in s.lower()]
