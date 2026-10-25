@@ -1,0 +1,30 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>htmx Basics</title>
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>HTMX Demo!!!!!!!</h1>
+
+    <div class="container">
+        <h2>Click n get time</h2>
+        <button hx-get="/time" hx-target="#time-result" hx-indicator="#loadloadload">Get server time</button>
+        <span id="loadloadload" class="htmx-indicator">Getting time...</span>
+        <div id="time-result"></div>
+    </div>
+
+    <div class="container">
+        <h2>Slop Search</h2>
+        <input type="search" name="slop" placeholder="Search slop here..."
+                hx-get="search"
+                hx-trigger="input changed delay:300ms, search"
+                hx-target="#results">
+        <ul id="results"></ul>
+    </div>
+
+
+</body>
+</html>
