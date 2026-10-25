@@ -16,13 +16,13 @@ slop_list = [
 def index():
     return render_template("index.html")
 
-@app.route('/time')
+@app.route('/time', methods=["GET"])
 def server_time():
     time.sleep(0.5) #artificial delay
     return f'<strong>Server time: {datetime.now():%H:%M:%S}</strong>'
 
 
-@app.route('/search')
+@app.route('/search', methods=["POST"])
 def search():
     slop = request.args.get("slop","").strip().lower()
     matches = [s for s in slop_list if slop in s.lower()]
