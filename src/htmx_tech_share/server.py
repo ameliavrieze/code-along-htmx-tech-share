@@ -18,7 +18,7 @@ def index():
 
 @app.route('/time', methods=["GET"])
 def server_time():
-    time.sleep(0.5) #artificial delay
+    time.sleep(0.5) #artificial delay to display load
     return f'<strong>Server time: {datetime.now():%H:%M:%S}</strong>'
 
 
@@ -27,7 +27,7 @@ def search():
     slop = request.args.get("slop","").strip().lower()
     matches = [s for s in slop_list if slop in s.lower()]
     if not matches:
-        return "<li>You haven't consumed enough slop yet, larper. (No matches)</li>"
+        return "<li>You haven't consumed enough slop yet, poser. (No matches)</li>"
     return "".join(f"<li>{s}</li>" for s in matches)
 
 # @app.route('/')
