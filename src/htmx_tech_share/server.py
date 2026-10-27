@@ -40,10 +40,10 @@ def index():
     yap_html = "".join(yap_display(i, t) for i, t in yap_list.items())
     return render_template("index.html", yap_html=yap_html)
 
-@app.route('/time', methods=["GET"])
-def server_time():
+@app.route('/clicked', methods=["GET"])
+def clicky():
     time.sleep(0.5) #artificial delay to display load
-    return f'<strong>Server time: {datetime.now():%H:%M:%S}</strong>'
+    return f'<p>This message was generated dynamically with HTMX! Yippee!!</p>'
 
 
 @app.route('/search', methods=["GET"])

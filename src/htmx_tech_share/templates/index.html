@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>htmx Basics</title>
+  <title>HTMX Basics</title>
   <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../static/css/styles.css">
 </head>
@@ -11,10 +11,10 @@
     <h1>HTMX Demo!!!!!!!</h1>
 
     <div class="container">
-        <h2>Click n get time</h2>
-        <button hx-get="/time" hx-target="#time-result" hx-indicator="#loadloadload">Get server time</button>
-        <span id="loadloadload" class="htmx-indicator">Getting time...</span>
-        <div id="time-result"></div>
+        <h2>Click the button!</h2>
+        <button hx-get="/clicked" hx-target="#hello" hx-indicator="#loadloadload" hx-swap="innerHTML">Right here buddy</button>
+        <span id="loadloadload" class="htmx-indicator">Loading.......</span>
+        <div id="hello"></div>
     </div>
 
     <line></line>
