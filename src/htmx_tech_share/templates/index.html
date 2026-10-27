@@ -1,10 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>HTMX Basics</title>
-  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
+  <!-- CDN link here! -->
+   <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
@@ -12,35 +12,14 @@
 
     <div class="container">
         <h2>Click the button!</h2>
-        <button hx-get="/clicked" hx-target="#hello" hx-indicator="#loadloadload" hx-swap="innerHTML">Right here buddy</button>
-        <span id="loadloadload" class="htmx-indicator">Loading.......</span>
-        <div id="hello"></div>
+
+        <button>
+            Click to display?
+        </button>
+
+        <div>
+            <br>We want message to display here!
+        </div>
     </div>
-
-    <line></line>
-
-    <div class="container">
-        <h2>Slop Search</h2>
-        <input type="search" name="slop" placeholder="Search slop here..."
-                hx-get="search"
-                hx-trigger="input changed delay:300ms, search"
-                hx-target="#results">
-        <ul id="results"></ul>
-    </div>
-
-    <div class="container">
-        <h2>Add n Delete</h2>
-        <form hx-post="/yaplist" hx-target="#display-list" hx-swap="beforeend" hx-on::after-request="this.reset()">
-            <input name="text" placeholder="Yap away bud" required>
-            <button>Add</button>
-        </form>
-        <ul id="display-list">{{ yap_html | safe }}</ul>
-    </div>
-
-
-
-    <!-- resetting user input: https://htmx.org/examples/reset-user-input/ -->
-
-
 </body>
 </html>
