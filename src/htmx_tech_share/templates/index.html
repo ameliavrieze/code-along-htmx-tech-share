@@ -28,6 +28,19 @@
         <ul id="results"></ul>
     </div>
 
+    <div class="container">
+        <h2>Add n Delete</h2>
+        <form hx-post="/yaplist" hx-target="#display-list" hx-swap="beforeend" hx-on::after-request="this.reset()">
+            <input name="text" placeholder="Yap away bud" required>
+            <button>Add</button>
+        </form>
+        <ul id="display-list">{{ yap_html | safe }}</ul>
+    </div>
+
+
+
+    <!-- resetting user input: https://htmx.org/examples/reset-user-input/ -->
+
 
 </body>
 </html>
