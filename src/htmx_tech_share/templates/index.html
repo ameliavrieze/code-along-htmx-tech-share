@@ -4,22 +4,45 @@
   <meta charset="utf-8">
   <title>HTMX Basics</title>
   <!-- CDN link here! -->
-   <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
     <h1>HTMX Demo!!!!!!!</h1>
 
-    <div class="container">
-        <h2>Click the button!</h2>
+<!-- ---EXAMPLE 1------------------------------------------------------------------------- -->
 
-        <button>
-            Click to display?
-        </button>
+    <h2>Click the button!</h2>
+    <button hx-get="/clicked" hx-target="#msgtoreplace" hx-swap="innerHTML" hx-indicator="#load">
+        Click to display?
+    </button>
 
-        <div>
-            <br>We want message to display here!
-        </div>
+    <span id="load" class="htmx-indicator">Loading...</span>
+
+    <div id="msgtoreplace">
+        <p>We want message to display here!</p>
     </div>
+
+<!-- ---EXAMPLE 2------------------------------------------------------------------------- -->
+    <hr>
+    <h2>Infinite scroll???!!</h2>
+    <p>What to do about all these images...</p>
+
+    <div hx-indicator="#load2">
+        {% for img in images %}
+            {% if loop.last %}
+                <div hx-get = "/scroll/?page=2" hx-trigger ="revealed" hx-swap ="afterend" hx-target = "this">
+            {% else %}
+                <div>
+            {% endif %}
+
+                <img src="{{url_for('static', filename=img)}}"></img>
+
+                </div>
+        {%endfor%}
+    </div>
+    <span id="load2" class="htmx-indicator">Loading...</span>
+
+
 </body>
 </html>
