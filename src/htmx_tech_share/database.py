@@ -5,7 +5,9 @@ images = ["img/3dchungus.gif", "img/contentawarechungus.gif", "img/cubechungus.g
           "img/explodechungus.gif", "img/spherechungus.gif", "img/spinchungus.gif", 
           "img/wavechungus.gif", "img/donutchungus.gif", "img/pyramidchungus.gif", 
           "img/triplechungus.gif",]
-def get_images(limit=8):
+
+# Simulate large load
+def get_images(limit=10000):
     rand_images = []
     for i in range(limit):
         rand_images.append(random.choice(images))

@@ -13,11 +13,9 @@
 <!-- ---EXAMPLE 1------------------------------------------------------------------------- -->
 
     <h2>Click the button!</h2>
-    <button hx-get="/clicked" hx-target="#msgtoreplace" hx-swap="innerHTML" hx-indicator="#load">
+    <button>
         Click to display?
     </button>
-
-    <span id="load" class="htmx-indicator">Loading...</span>
 
     <div id="msgtoreplace">
         <p>We want message to display here!</p>
@@ -28,21 +26,13 @@
     <h2>Infinite scroll???!!</h2>
     <p>What to do about all these images...</p>
 
-    <div hx-indicator="#load2">
+    <div>
         {% for img in images %}
-            {% if loop.last %}
-                <div hx-get = "/scroll/?page=2" hx-trigger ="revealed" hx-swap ="afterend" hx-target = "this">
-            {% else %}
-                <div>
-            {% endif %}
-
-                <img src="{{url_for('static', filename=img)}}"></img>
-
-                </div>
+            <div>
+            <img src="{{url_for('static', filename=img)}}"></img>
+            </div>
         {%endfor%}
     </div>
-    <span id="load2" class="htmx-indicator">Loading...</span>
-
 
 </body>
 </html>

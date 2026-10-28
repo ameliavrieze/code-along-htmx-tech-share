@@ -5,10 +5,9 @@ import htmx_tech_share.database as database
 
 app = Flask(__name__)
 
-limit = 4; 
 @app.route('/')
 def index():
-    return render_template("index.html", images=database.get_images(limit), limit=limit)
+    return render_template("index.html", images=database.get_images())
 
 # We want to display this after clicking a button
 @app.route('/clicked', methods=["GET"])
@@ -19,8 +18,7 @@ def clicky():
 @app.route("/scroll/")
 def scroll():
     time.sleep(1) #artificial delay to display load
-    page = request.args.get("pages", 1, type = int)
-    return render_template("scroll.html", page=page, images=database.get_images(limit), limit=limit)
+    return render_template()
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
