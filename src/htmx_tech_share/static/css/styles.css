@@ -1,36 +1,36 @@
-:root{
-    font-family: sans-serif;
+:root {
+  font-family: sans-serif;
 }
 
 line {
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid black;
-    margin-top: 2rem;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-top: 2rem;
 }
 
-button{
-    margin-bottom: 1rem;
+button {
+  margin-bottom: 1rem;
 }
 
-#msgtoreplace{
-    padding: 0.5rem;
-    border: 0.3rem dashed rgb(184, 184, 184);
+#msgtoreplace {
+  padding: 0.5rem;
+  border: 0.3rem dashed rgb(0, 251, 255);
 }
 
-hr{
-    margin: 2rem 0rem;
-    border: none;            
-    height: 0.2rem;
-    background-color: black;   
+hr {
+  margin: 2rem 0rem;
+  border: none;
+  height: 0.2rem;
+  background-color: black;
 }
 
-img{
-    background-color: rgb(184, 184, 184);
+img {
+  background-color: rgb(234, 19, 19);
 }
 
-span{
-    padding: 0.5rem;
-    font-style:italic;
-    font-weight: 200;
+span {
+  padding: 0.5rem;
+  font-style: italic;
+  font-weight: 200;
 }
