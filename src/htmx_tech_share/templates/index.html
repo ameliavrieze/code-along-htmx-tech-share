@@ -32,7 +32,8 @@
 
     <div>
         {% for img in images %}
-            <div>
+        {% if loop.last %}
+            <div hx-get="/scroll/?page={{page + 1}}" hx-trigger="revealed" hx-swap="afterend" hx-target="this">
             <img src="{{url_for('static', filename=img)}}"></img>
             </div>
         {%endfor%}
