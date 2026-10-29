@@ -18,7 +18,8 @@ def clicky():
 @app.route("/scroll/")
 def scroll():
     time.sleep(1) #artificial delay to display load
-    return render_template()
+    page = request.args.get()
+    return render_template("scroll.html")
 
 
 if __name__ == "__main__":
