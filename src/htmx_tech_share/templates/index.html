@@ -15,9 +15,11 @@
 <!-- ---EXAMPLE 1------------------------------------------------------------------------- -->
 
     <h2>Click the button!</h2>
-    <button>
+    <button hx-get="/clicked" hx-target="#msgtoreplace" hx-swap="innerHTML" hx-indicator="#loadmsg">
         Click to display?
     </button>
+
+  <span class="htmx-indicator" id="loadmsg">Loading</span>
 
     <div id="msgtoreplace">
         <p>We want message to display here!</p>
